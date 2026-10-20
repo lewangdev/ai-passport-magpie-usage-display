@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.16)
+project(magpie_preview C CXX)
+set(CONFIG_LV_BUILD_DEMOS OFF CACHE BOOL "" FORCE)
+set(CONFIG_LV_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(CONFIG_LV_USE_THORVG_INTERNAL OFF CACHE BOOL "" FORCE)
+set(LV_BUILD_CONF_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lv_conf.h" CACHE PATH "" FORCE)
+add_subdirectory("${LVGL_PATH}" lvgl)
+add_executable(render render.c ../../main/magpie_ui.c ../../main/magpie_logo.c ../../main/magpie_model.c
+    ../../components/bsp/src/bsp_display_rounding.c "$ENV{IDF_PATH}/components/json/cJSON/cJSON.c")
+target_include_directories(render PRIVATE ../../main ../../components/bsp/src "$ENV{IDF_PATH}/components/json/cJSON")
+target_link_libraries(render PRIVATE lvgl m)

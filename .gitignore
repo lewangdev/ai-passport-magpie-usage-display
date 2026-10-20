@@ -11,3 +11,6 @@ build/
 dist/
 .idea/
 .vscode/
+firmware/ai-passport/managed_components/
+firmware/ai-passport/sdkconfig
+firmware/ai-passport/sdkconfig.old

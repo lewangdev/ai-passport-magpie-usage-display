@@ -26,6 +26,14 @@ or request content.
 The Context page only uses metrics exposed by Magpie's public gateway API; it
 does not reproduce the private scoring used by the macOS app.
 
+## AI Passport version
+
+[FoloToy AI Passport firmware](firmware/ai-passport/README.md) ports the four
+metric pages and BLE v4 protocol to ESP32-C3 with a 240×320 display and three
+physical buttons. It reuses the existing macOS Companion. Build this version
+with ESP-IDF 5.5.3; the Waveshare PlatformIO commands below do not apply.
+Build and host tests pass; display, buttons and BLE pairing await device checks.
+
 ## Requirements
 
 - [Waveshare ESP32-S3-Touch-AMOLED-2.16](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm)

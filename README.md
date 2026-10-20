@@ -48,6 +48,14 @@ ESP32-S3。开发板不保存 API Key、账户凭据或请求内容。
 Context 页面只展示 Magpie 公共网关 API 能提供的真实统计，不复制 macOS App
 内部尚未公开的 Context 评分。
 
+## AI Passport 版本
+
+本仓库新增 [FoloToy AI Passport 固件](firmware/ai-passport/README.zh_CN.md)，
+将相同的四页指标和 BLE v4 协议移植到 ESP32-C3 / 240×320 屏幕，
+使用三个实体键翻页、刷新和打开快捷操作，复用下文的 macOS Companion。
+该版本使用 ESP-IDF 5.5.3 构建，**不要使用下方的 Waveshare PlatformIO 烧录命令**。
+构建和主机测试已验证，真机显示、按键和蓝牙配对仍需验收。
+
 ## 硬件与系统要求
 
 - [Waveshare ESP32-S3-Touch-AMOLED-2.16](https://www.waveshare.com/esp32-s3-touch-amoled-2.16.htm)
@@ -57,7 +65,7 @@ Context 页面只展示 Magpie 公共网关 API 能提供的真实统计，不�
 - 已安装并正在运行的 Magpie
 - PlatformIO
 
-目前只验证了上述开发板和 macOS。
+原 PlatformIO 固件仅验证了上述开发板和 macOS；AI Passport 版本见专用文档。
 
 ## 工作原理
 
@@ -267,7 +275,7 @@ BLE v4 协议见 [docs/BLE_PROTOCOL.md](docs/BLE_PROTOCOL.md)。
 ## 限制
 
 - Companion 当前仅支持 macOS
-- 只验证了 Waveshare ESP32-S3-Touch-AMOLED-2.16
+- 原固件仅验证了 Waveshare ESP32-S3-Touch-AMOLED-2.16；AI Passport 移植版尚待真机验收
 - 固件没有 OTA，升级需要 USB 烧录
 - Context 页面使用公共 API 聚合数据，不包含 Magpie App 内部评分
 
